@@ -1,6 +1,6 @@
 # Node Voting Application
 
-NodeJS + MOngoDB → Pusher → Single Page Application
+NodeJS + MongoDB → Pusher → Single Page Application
 
 ## To use
 
