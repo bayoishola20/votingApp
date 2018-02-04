@@ -1,0 +1,36 @@
+{
+  "name": "votingapp",
+  "version": "1.0.0",
+  "description": "A real-time voting application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bayoishola20/votingApp.git"
+  },
+  "keywords": [
+    "real-time",
+    "pusher",
+    "voting-app"
+  ],
+  "author": "bayoishola20",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bayoishola20/votingApp/issues"
+  },
+  "homepage": "https://github.com/bayoishola20/votingApp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.3",
+    "pusher": "^1.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  }
+}
