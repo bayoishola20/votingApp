@@ -1,3 +1,35 @@
+body {
+    font-family: 'Bellefair', serif;
+    font-size: 20px;
+    padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: ghostwhite;
+}
+
+#hasVotedAlreadyErrorMsg {
+    width: 30%;
+    display: none;
+}
+
+#chartTitle {
+    text-align: center;
+}
+
+#chartContainer {
+    height: 400px;
+    width: 100%;
+}
+
 .canvasjs-chart-credit {
     visibility: hidden;
+}
+
+.footer {
+    font-size: 10px;
+}
+ 
+.fa-github {
+    color: gray;
 }

@@ -35,6 +35,24 @@ fetch('http://localhost:4343/poll')
             {}
         );
 
+        // Dynamic Chart Title
+        document.querySelector('#chartTitle').textContent = `Pseudo-election results: ${votes.length} votes in total`;
+
+        // Refresh the Total Votes every 2 seconds
+        setInterval(() => {
+            fetch('http://localhost:4343/poll')
+            .then(res => res.json())
+            .then(data => document.querySelector('#chartTitle').textContent = `Pseudo-election results: ${votes.length} votes in total`)
+            .catch(err => console.log(err));
+        }, 1000);
+
+        // Set initial Data Points Values to 0
+        if (Object.keys(voteCounts).length === 0 && voteCounts.constructor === Object) {
+            voteCounts.PDP = 0;
+            voteCounts.APC = 0;
+            voteCounts.APGA = 0;
+        }
+
 
         let dataPoints = [
             { label: 'PDP', y: voteCounts.PDP, legendText: 'PDP' },
@@ -48,13 +66,6 @@ fetch('http://localhost:4343/poll')
             const chart = new CanvasJS.Chart('chartContainer', {
                 animationEnabled: true,
                 theme: 'theme3',
-                title: {
-                    text: `Pseudo-election results: ${votes.length} votes in total`,
-                    fontWeight: "bolder",
-                    fontColor: "whitesmoke",
-                    fontSize: 15,
-                    padding: 10
-                },
                 data: [
                     {
                         type: 'pie',

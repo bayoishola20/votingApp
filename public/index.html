@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Spectral" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
@@ -11,8 +13,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Political Parties</h1>
+        <h1 class="center">Political Parties</h1>
         <p> Vote for your choice party</p>
+
+        <div id="hasVotedAlreadyErrorMsg" class="card-panel hidden">
+                <span class="red-text text-darken-2">You can only vote once.</span>
+          </div>
 
         <form id="vote-form">
             <p>
@@ -39,7 +45,17 @@
             <br>
             <br>
 
-            <div id="chartContainer" style="height: 400px; width: 100%"></div>
+            <h5 id="chartTitle"></h5>
+            <div id="chartContainer"></div>
+
+            <br>
+
+            <span>
+                <p class="center">
+                    <a href="https://github.com/bayoishola20/votingApp" target="_blank"><i class="fa fa-github fa-fw text-default" aria-hidden="true" title="Github"></i></a>
+                </p>
+                <p class="center footer">&copy; 2018</p>              
+            </span>
         
         </form>
     </div>
