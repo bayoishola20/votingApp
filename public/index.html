@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Voting Application</title>
 </head>
 <body>
@@ -16,26 +17,29 @@
         <form id="vote-form">
             <p>
                 <input type="radio" name="party" id="pdp" value="PDP">
-                <label for="party">PDP</label>
+                <label for="pdp">PDP</label>
             </p>
 
             <p>
                 <input type="radio" name="party" id="apc" value="APC">
-                <label for="party">APC</label>
+                <label for="apc">APC</label>
             </p>
 
             <p>
                 <input type="radio" name="party" id="apga" value="APGA">
-                <label for="party">APGA</label>
+                <label for="apga">APGA</label>
             </p>
             
             <button class="btn waves-effect waves-light" type="submit" name="action">Vote
                     <i class="material-icons right">move_to_inbox</i>
             </button>
 
-            <br><br>
+            <!-- <input type="submit" value="Vote" class="btn"> -->
 
-            <div id="chartContainer" style="height: 300px; width: 100%"></div>
+            <br>
+            <br>
+
+            <div id="chartContainer" style="height: 400px; width: 100%"></div>
         
         </form>
     </div>
@@ -43,11 +47,9 @@
     
     <!-- JQuery stays above -->
     <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https:// cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.2.2/pusher.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
-
     <script src="main.js"></script>
-
 </body>
 </html>

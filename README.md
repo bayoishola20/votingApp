@@ -1,6 +1,6 @@
 # Node Voting Application
 
-NodeJS + MongoDB → Pusher → Single Page Application
+Pusher + NodeJS + MongoDB + Express + CanvasJs + VanillaJS → Single Page Application
 
 ## To use
 
@@ -17,6 +17,7 @@ Clone the repo: `git clone https://github.com/bayoishola20/votingApp.git`
 * MongoDB
 * Pusher API
 * VanillaJS
+* CanvasJS
 
 ![Preview](https://github.com/bayoishola20/dishApp/blob/master/public/img/dishApp-bayoishola20.png "Preview")
 

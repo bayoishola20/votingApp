@@ -3,6 +3,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+require('./config/database');
+
 const app = express();
 
 //routes
