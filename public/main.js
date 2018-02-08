@@ -3,48 +3,55 @@ const form = document.getElementById('vote-form');
 // Submit form
 
 form.addEventListener('submit', e => {
-    const choice = document.querySelector('input[name=party]:checked').value;
-    const data = { party: choice };
+    // Check local storage if "hasVoted"
+    if(window.localStorage.getItem('hasVoted')) {
+        $('#hasVotedAlreadyErrorMsg').removeClass('hidden');
+        e.preventDefault();
+    } else {
+        // Set localStorage to show voted already
+        window.localStorage.setItem('hasVoted', true)
 
-    fetch('http://localhost:4343/poll', {
-        method: 'post',
-        body: JSON.stringify(data),
-        headers: new Headers({
-            'Content-Type': 'application/json'
+        const choice = document.querySelector('input[name=party]:checked').value;
+        const data = { party: choice };
+
+        fetch('http://localhost:4343/poll', {
+            method: 'post',
+            body: JSON.stringify(data),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
         })
-    })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
 
-    e.preventDefault();
+        e.preventDefault();
+    }
 });
 
-// Submit form
+// Submit form ends
 
 fetch('http://localhost:4343/poll')
     .then(res => res.json())
     .then(data => {
-        // console.log(data);
         const votes = data.votes;
-        //Vote count - acc/current
-        const voteCounts = votes.reduce(
-            (acc, vote) => (
-              (acc[vote.party] = (acc[vote.party] || 0) + parseInt(vote.points)), acc
-            ),
-            {}
-        );
 
         // Dynamic Chart Title
-        document.querySelector('#chartTitle').textContent = `Pseudo-election results: ${votes.length} votes in total`;
-
-        // Refresh the Total Votes every 2 seconds
+        // Refresh the Total Votes every second
         setInterval(() => {
             fetch('http://localhost:4343/poll')
             .then(res => res.json())
             .then(data => document.querySelector('#chartTitle').textContent = `Pseudo-election results: ${votes.length} votes in total`)
             .catch(err => console.log(err));
         }, 1000);
+
+        //Vote count - acc/current
+        const voteCounts = votes.reduce(
+            (acc, vote) => (
+            (acc[vote.party] = (acc[vote.party] || 0) + parseInt(vote.points)), acc
+            ),
+            {}
+        );
 
         // Set initial Data Points Values to 0
         if (Object.keys(voteCounts).length === 0 && voteCounts.constructor === Object) {
@@ -66,11 +73,16 @@ fetch('http://localhost:4343/poll')
             const chart = new CanvasJS.Chart('chartContainer', {
                 animationEnabled: true,
                 theme: 'theme3',
+                legend:{
+                    fontFamily: "Bellefair",
+                   },
                 data: [
                     {
                         type: 'pie',
                         dataPoints: dataPoints,
                         showInLegend: true,
+                        indexLabelFontFamily: 'Bellefair',
+                        indexLabelFontStyle: 'italic'
                     }
                 ]
             });

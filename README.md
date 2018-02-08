@@ -8,7 +8,7 @@ Clone the repo: `git clone https://github.com/bayoishola20/votingApp.git`
 
 `$ (sudo) npm install`
 
-`$ nodemon`
+`$ npm run dev`
 
 ## You should have installed (most recent versions):
 

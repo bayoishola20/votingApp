@@ -8,6 +8,10 @@ body {
 	background-color: ghostwhite;
 }
 
+/* canvas {
+    font-family: 'Bellefair';
+} */
+
 #hasVotedAlreadyErrorMsg {
     width: 30%;
     display: none;
@@ -24,10 +28,6 @@ body {
 
 .canvasjs-chart-credit {
     visibility: hidden;
-}
-
-.footer {
-    font-size: 10px;
 }
  
 .fa-github {

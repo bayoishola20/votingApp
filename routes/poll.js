@@ -6,12 +6,14 @@ const Vote = require('../models/Vote');
 
 const Pusher = require('pusher');
 
+const keys = require('../config/keys');
+
 let pusher = new Pusher({
-  appId: '468819',
-  key: '0b8806dddaba260eed07',
-  secret: '8dc6eef5049a6d7bac93',
-  cluster: 'ap1',
-  encrypted: true
+  appId: keys.pusherAppId,
+  key: keys.pusherKey,
+  secret: keys.pusherSecret,
+  cluster: keys.pusherCluster,
+  encrypted: keys.pusherEncrypted
 });
 
 router.get('/', (req, res) => {
