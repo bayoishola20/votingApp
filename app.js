@@ -5,6 +5,8 @@ const cors = require('cors');
 
 require('./config/database');
 
+require('dotenv').config({ path: './variables.env' });
+
 const app = express();
 
 //routes
@@ -23,7 +25,7 @@ app.use(cors());
 
 app.use('/poll', poll);
 
-const port = 4343;
+const port = process.env.PORT || 4343;
 
 // Start Server
 app.listen(port, () => console.log(`Server at port ${port}`));
