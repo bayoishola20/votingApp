@@ -14,7 +14,7 @@ form.addEventListener('submit', e => {
         const choice = document.querySelector('input[name=party]:checked').value;
         const data = { party: choice };
 
-        fetch('http://localhost:4343/poll', {
+        fetch('http://voting-ng.herokuapp.com/poll', {
             method: 'post',
             body: JSON.stringify(data),
             headers: new Headers({
@@ -31,7 +31,7 @@ form.addEventListener('submit', e => {
 
 // Submit form ends
 
-fetch('http://localhost:4343/poll')
+fetch('http://voting-ng.herokuapp.com/poll')
     .then(res => res.json())
     .then(data => {
         const votes = data.votes;
@@ -39,7 +39,7 @@ fetch('http://localhost:4343/poll')
         // Dynamic Chart Title
         // Refresh the Total Votes every second
         setInterval(() => {
-            fetch('http://localhost:4343/poll')
+            fetch('http://voting-ng.herokuapp.com/poll')
             .then(res => res.json())
             .then(data => document.querySelector('#chartTitle').textContent = `Pseudo-election results: ${votes.length} votes in total`)
             .catch(err => console.log(err));
