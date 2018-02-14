@@ -19,6 +19,6 @@ Clone the repo: `git clone https://github.com/bayoishola20/votingApp.git`
 * VanillaJS
 * CanvasJS
 
-![http://voting-ng.herokuapp.com/](https://github.com/bayoishola20/votingApp/blob/master/public/img/bayoishola20-voting-app.png "Preview")
+![Preview](https://github.com/bayoishola20/votingApp/blob/master/public/img/bayoishola20-voting-app.png "http://voting-ng.herokuapp.com/")
 
 [bayoishola20](github.bayoishola20.io)
