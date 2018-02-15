@@ -35,6 +35,7 @@ fetch('http://voting-ng.herokuapp.com/poll')
     .then(res => res.json())
     .then(data => {
         const votes = data.votes;
+        document.querySelector('#chartTitle').textContent = `Pseudo-election results: ${votes.length} votes in total`;
 
         // Dynamic Chart Title
         // Refresh the Total Votes every second
